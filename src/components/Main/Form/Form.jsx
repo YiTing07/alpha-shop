@@ -3,7 +3,7 @@ import StepProgress from './StepProgress';
 import Step1 from './Step1';
 //import Step2 from './Step2';
 //import Step3 from './Step3';
-//import ProgressControl from './ProgressControl';
+import ProgressControl from './ProgressControl';
 
 
 
@@ -15,6 +15,7 @@ export default function Form () {
           <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
           <StepProgress></StepProgress>
           <Step1></Step1>
+          <ProgressControl></ProgressControl>
         </section>
       </div>
     </main>

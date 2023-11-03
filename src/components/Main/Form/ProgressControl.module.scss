@@ -1,0 +1,49 @@
+section.progressControlContainer {
+  position: relative;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 40px;
+  
+}
+
+section.buttonGroup {
+  display: flex;
+  padding: 24px 0 ;
+  border-top: 1px solid #E6E6EB;
+
+  button {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    border-radius: 8px;
+    border-width: 0px;
+    padding: 0px;
+  }
+  .prev {
+    background-color: transparent;
+    line-height: 20px;
+    font-weight: 400;
+    color: #000000;
+
+    > object {
+      margin-right: 12px;
+    }
+  }
+
+  .next {
+    justify-content: center;
+    width: 174px;
+    font-weight: 500;
+    line-height: 17px;
+    background: var(--pink);
+    color: #FFFFFF;
+    margin-left: auto;
+
+    > object {
+      margin-left: 12px;
+    }
+  }
+}
