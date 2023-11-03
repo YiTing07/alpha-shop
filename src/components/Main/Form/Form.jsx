@@ -15,6 +15,7 @@ export default function Form () {
           <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
           <StepProgress></StepProgress>
           <Step1></Step1>
+          
           <ProgressControl></ProgressControl>
         </section>
       </div>
