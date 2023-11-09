@@ -1,6 +1,6 @@
 import styles from './Cart.module.scss';
-import { ReactComponent as Minus } from '../../../assets/icon/minus.svg';
-import { ReactComponent as Plus } from '../../../assets/icon/plus.svg';
+import { ReactComponent as Minus } from '../../../assets/icons/minus.svg';
+import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
 //import Product1 from '../../../assets/image/product-1.jpg';
 //import Product2 from '../../../assets/image/product-2.jpg'
 

@@ -1,7 +1,7 @@
 // import Header from './components/Header/Header';
 import './reset.css';
 import './App.css';
-import Main from './components/Main/main';
+import Main from './components/Main/Main';
 
 
 

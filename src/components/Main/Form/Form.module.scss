@@ -1,26 +1,11 @@
-.siteMain {
-  margin-top: 80px;
-  padding-left: var(--site-edge-margin);
-  padding-right: var(--site-edge-margin);
-  background-color: inherit;
+.registerContainer {
+  width: 50%;
 
-  .mainContainer {
-    display: flex;
-    position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .registerContainer {
-      width: 50%;
-
-      .registerTitle {
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 38px;
-        color: var(--main-text);
-      }
-    }
+  .registerTitle {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    color: var(--main-text);
   }
 }
+ 
