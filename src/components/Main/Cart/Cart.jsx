@@ -1,25 +1,6 @@
 import styles from './Cart.module.scss';
 import { ReactComponent as Minus } from '../../../assets/icons/minus.svg';
 import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
-//import Product1 from '../../../assets/image/product-1.jpg';
-//import Product2 from '../../../assets/image/product-2.jpg'
-
-const products = [
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-]
 
 function Product() {
   return (
