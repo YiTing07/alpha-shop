@@ -9,19 +9,28 @@ import { useState } from 'react';
 
 
 export default function Form () {
-  const [step, setSstep] = useState(1);
+  const [step, setStep] = useState(1);
+
+  const handleClickPrev = () => {
+    setStep(step - 1)
+  };
+  const handleClickNext = () => {
+    setStep(step +1)
+  };
 
   return (
     <section className={`${styles.registerContainer} col col-lg-6 col-sm-12`} data-phase="1" data-total-price="0">
       <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
       <StepProgress></StepProgress>
-      
-      <Step1 />
-      <Step2 />
-      <Step3 />
+
+      {step === 1 && <Step1 />}
+      {step === 2 && <Step2 />}
+      {step === 3 && <Step3 />}
           
       <ProgressControl
         step={step}
+        handleClickPrev={handleClickPrev}
+        handleClickNext={handleClickNext}
       />
     </section>
       
