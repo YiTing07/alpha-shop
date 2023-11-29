@@ -21,7 +21,7 @@ export default function Form () {
   return (
     <section className={`${styles.registerContainer} col col-lg-6 col-sm-12`} data-phase="1" data-total-price="0">
       <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
-      <StepProgress></StepProgress>
+      <StepProgress step={step} />
 
       {step === 1 && <Step1 />}
       {step === 2 && <Step2 />}

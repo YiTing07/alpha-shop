@@ -17,17 +17,16 @@ section.progressContainer {
   .progressGroup {
     display: flex;
 
-    .progressIcon {
+    .progressIconUndone {
       display: inline-block;
       position: relative;
       width: 27px;
       height: 27px;
       margin-right: 8px;
       border-radius: 50%;
-      background-color: var(--pg-addr-bg-color);
-      border-color: var(--pg-addr-bg-color);
+      border: 2px solid var(--progress-undone-color);
 
-      .text {
+      .textUndone {
         width: inherit;
         height: inherit;
         position: absolute;
@@ -36,19 +35,53 @@ section.progressContainer {
         font-weight: 700;
         line-height: 24px;
         text-align: center;
-        color: var(--pg-addr-color);
+        color: var(--progress-undone-color);
       }
+    }
 
-      .icon {
+    .progressIconCurrent {
+      display: inline-block;
+      position: relative;
+      width: 27px;
+      height: 27px;
+      margin-right: 8px;
+      border-radius: 50%;
+      border: 2px solid var(--progress-current-color);
+
+      .textCurrent {
         width: inherit;
         height: inherit;
+        position: absolute;
+        top: 0px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: center;
+        color: var(--progress-current-color);
       }
     }
 
-    .progressLabel {
+    .progressLabelUndone {
       font-weight: 400;
       line-height: 24px;
-      color: var(--main-text);
+      color: var(--progress-undone-color);
     }
+
+    .progressLabelCurrent {
+      font-weight: 400;
+      line-height: 24px;
+      color: var(--progress-current-color);
+    }
+
+    .completeIcon {
+      position: relative;
+      width: 27px;
+      height: 27px;
+      margin-right: 8px;
+    }
+  }
+
+  .undone {
+    color: var(--progress-undone-color);
   }
 }
