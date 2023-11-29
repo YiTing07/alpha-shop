@@ -7,13 +7,51 @@ import { useState } from 'react';
 
 
 export default function Main () {
-  const [cartinfo, setCartInfo] = useState(productData);
+  const [cartInfo, setCartInfo] = useState(productData);
+
+  const handleClickPlus = ((id) => {
+    setCartInfo((prevCartInfo) => {
+      return prevCartInfo.map((product) => {
+        if (product.id === id) {
+          const newQuantity = Math.max(product.quantity + 1, 1)
+          const newPrice = product.price / product.quantity * newQuantity
+          return {
+            ...product,
+            quantity: newQuantity,
+            price: newPrice,
+          };
+        }
+        return product
+      })
+    })
+  });
+
+  const handleClickMinus = ((id) => {
+    setCartInfo((prevCartInfo) => {
+      return prevCartInfo.map((product) => {
+        if (product.id === id) {
+          const newQuantity = Math.max(product.quantity - 1, 1)
+          const newPrice = product.price / product.quantity * newQuantity
+          return {
+            ...product,
+            quantity: newQuantity,
+            price: newPrice,
+          };  
+        }
+        return product
+      })
+    })
+  });
 
   return (
     <main className={styles.siteMain}>
       <div className={styles.mainContainer}>
         <Form></Form>
-        <Cart></Cart>
+        <Cart
+          cartInfo={cartInfo}
+          onClickPlus={handleClickPlus}
+          onClickMinus={handleClickMinus}
+        />
       </div>
     </main>
   );

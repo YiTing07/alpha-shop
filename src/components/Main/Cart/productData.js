@@ -1,5 +1,5 @@
-import Product1 from '../../../assets/image/product-1.jpg';
-import Product2 from '../../../assets/image/product-2.jpg'
+import Product1 from '../../../assets/images/product-1.jpg';
+import Product2 from '../../../assets/images/product-2.jpg';
 
 const products = [
   {
