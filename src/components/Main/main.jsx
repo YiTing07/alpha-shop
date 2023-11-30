@@ -43,6 +43,10 @@ export default function Main () {
     })
   });
 
+  const totalPrice = cartInfo.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.price
+  }, 0);
+
   return (
     <main className={styles.siteMain}>
       <div className={styles.mainContainer}>
@@ -51,6 +55,7 @@ export default function Main () {
           cartInfo={cartInfo}
           onClickPlus={handleClickPlus}
           onClickMinus={handleClickMinus}
+          totalPrice={totalPrice}
         />
       </div>
     </main>

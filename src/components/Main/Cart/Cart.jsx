@@ -36,7 +36,7 @@ function CartItems ({ cartInfo, onClickPlus, onClickMinus }) {
   );
 }
 
-export default function Cart({ cartInfo, onClickMinus, onClickPlus }) {
+export default function Cart({ cartInfo, onClickMinus, onClickPlus, totalPrice }) {
   return (
     <section className={`${styles.cartContainer} col col-lg-5 col-sm-12`}>
       <h3 className={styles.cartTitle}>購物籃</h3>
@@ -51,11 +51,11 @@ export default function Cart({ cartInfo, onClickMinus, onClickPlus }) {
 
       <section className={`${styles.cartInfo} shipping col col-12`}>
         <div className={styles.text}>運費</div>
-        <div className={styles.price}></div>
+        <div className={styles.price}>Free</div>
       </section>
       <section className={`${styles.cartInfo} total col col-12`}>
         <div className={styles.text}>小計</div>
-        <div className={styles.price}></div>
+        <div className={styles.price}>{totalPrice}</div>
       </section>
     </section>
   );
