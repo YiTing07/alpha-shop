@@ -15,7 +15,7 @@ export default function Form () {
     setStep(step - 1)
   };
   const handleClickNext = () => {
-    setStep(step +1)
+    setStep(step + 1)
   };
 
   return (
