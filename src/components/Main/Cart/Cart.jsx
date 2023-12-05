@@ -1,11 +1,13 @@
 import styles from './Cart.module.scss';
 import { ReactComponent as Minus } from '../../../assets/icons/minus.svg';
 import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
+import { CartContext } from '../../../contexts/CartContext';
+import { useContext } from 'react';
 
-function CartItems ({ cartInfo, onClickPlus, onClickMinus }) {
+function CartItems ({ cart, handleClickMinus, handleClickPlus }) {
   return (
     <>
-      {cartInfo.map(item =>
+      {cart.map(item =>
       <div className={`${styles.productContainer} col col-12`} key={item.id}>
         <img
           className={styles.imgContainer}
@@ -18,12 +20,12 @@ function CartItems ({ cartInfo, onClickPlus, onClickMinus }) {
             <div className={styles.productControl}>
               <Minus
                 className={styles.productAction}
-                onClick={() => onClickMinus(item.id, item.quantity - 1)}
+                onClick={() => handleClickMinus(item.id, item.quantity - 1)}
               />
               <span className={styles.productCount}>{item.quantity}</span>
               <Plus
                 className={styles.productAction}
-                onClick={() => onClickPlus(item.id, item.quantity + 1)}
+                onClick={() => handleClickPlus(item.id, item.quantity + 1)}
               />
             </div>
           </div>
@@ -36,16 +38,52 @@ function CartItems ({ cartInfo, onClickPlus, onClickMinus }) {
   );
 }
 
-export default function Cart({ cartInfo, onClickMinus, onClickPlus, totalPrice }) {
+export default function Cart() {
+  const {cart, setCart, totalPrice} = useContext(CartContext);
+
+  const handleClickPlus = ((id) => {
+    setCart((prevCartInfo) => {
+      return prevCartInfo.map((product) => {
+        if (product.id === id) {
+          const newQuantity = Math.max(product.quantity + 1, 1)
+          const newPrice = product.price / product.quantity * newQuantity
+          return {
+            ...product,
+            quantity: newQuantity,
+            price: newPrice,
+          };
+        }
+        return product
+      })
+    })
+  });
+
+  const handleClickMinus = ((id) => {
+    setCart((prevCartInfo) => {
+      return prevCartInfo.map((product) => {
+        if (product.id === id) {
+          const newQuantity = Math.max(product.quantity - 1, 1)
+          const newPrice = product.price / product.quantity * newQuantity
+          return {
+            ...product,
+            quantity: newQuantity,
+            price: newPrice,
+          };  
+        }
+        return product
+      })
+    })
+  });
+
   return (
     <section className={`${styles.cartContainer} col col-lg-5 col-sm-12`}>
       <h3 className={styles.cartTitle}>購物籃</h3>
 
       <section className={`${styles.productList} col col-12`} data-total-price="0">
         <CartItems
-          cartInfo={cartInfo}
-          onClickMinus={(id, quantity) => onClickMinus?.(id, quantity)}
-          onClickPlus={(id, quantity) => onClickPlus?.(id, quantity)}
+          cart={cart}
+          handleClickMinus={handleClickMinus}
+          handleClickPlus={handleClickPlus}
         />
       </section>
 
