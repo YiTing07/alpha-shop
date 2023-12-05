@@ -1,12 +1,14 @@
 import styles from './ProgressControl.module.scss'
 import { ReactComponent as LeftArrow } from '../../../assets/icons/left-arrow.svg';
 import { ReactComponent as RightArrow } from '../../../assets/icons/right-arrow.svg';
+import { useContext } from 'react';
+import { FormContext } from '../../../contexts/FormContext';
 
-function ControlBtn ({step, handleClickNext, handleClickPrev}) {
+function ControlBtn ({step, handleClickPrev, handleClickNext, handleClickOrder}) {
   if (step === 1) {
     return (
       <button className={styles.next} onClick={handleClickNext}>
-        下一步
+            下一步
         <RightArrow />
       </button>
     )
@@ -21,7 +23,7 @@ function ControlBtn ({step, handleClickNext, handleClickPrev}) {
             下一步
           <RightArrow />
         </button>
-      </>
+      </> 
     )
   } else if (step === 3) {
     return (
@@ -30,7 +32,7 @@ function ControlBtn ({step, handleClickNext, handleClickPrev}) {
           <LeftArrow />
             上一步
         </button>
-        <button className={styles.next} onClick={handleClickNext}>
+        <button className={styles.next} onClick={handleClickOrder}>
           確認下單
         </button>
       </>
@@ -38,14 +40,21 @@ function ControlBtn ({step, handleClickNext, handleClickPrev}) {
   }
 }
 
-export default function ProgressControl ({step, handleClickNext, handleClickPrev}) {
+export default function ProgressControl ({step, handleClickPrev, handleClickNext}) {
+  const {logInputValues} = useContext(FormContext)
+
+  const handleClickOrder = () => {
+    logInputValues();
+  }
+  
     return (
       <section className={`${styles.progressControlContainer} col col-lg-6 col-sm-12`}>
         <section className={`${styles.buttonGroup} col col-12`}>
-          <ControlBtn
-            step={step}
+          <ControlBtn 
+            step={step} 
+            handleClickPrev={handleClickPrev} 
             handleClickNext={handleClickNext}
-            handleClickPrev={handleClickPrev}
+            handleClickOrder={handleClickOrder}
           />
         </section>
       </section>

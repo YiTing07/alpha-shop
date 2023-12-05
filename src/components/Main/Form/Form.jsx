@@ -5,6 +5,7 @@ import Step2 from './Step2';
 import Step3 from './Step3';
 import ProgressControl from './ProgressControl';
 import { useState } from 'react';
+import { FormContextProvider } from '../../../contexts/FormContext';
 
 
 
@@ -19,7 +20,8 @@ export default function Form () {
   };
 
   return (
-    <section className={`${styles.registerContainer} col col-lg-6 col-sm-12`} data-phase="1" data-total-price="0">
+    <FormContextProvider>
+      <section className={`${styles.registerContainer} col col-lg-6 col-sm-12`} data-phase="1" data-total-price="0">
       <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
       <StepProgress step={step} />
 
@@ -33,6 +35,8 @@ export default function Form () {
         handleClickNext={handleClickNext}
       />
     </section>
+    </FormContextProvider>
+    
       
   );
 }

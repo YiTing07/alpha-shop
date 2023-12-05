@@ -2,7 +2,7 @@ import styles from './Step1.module.scss';
 
 export default function Step1() {
     return (
-        <section class= {`${styles.formContainer} col col-12`}>
+        <section className= {`${styles.formContainer} col col-12`}>
             <form className="col col-12" data-phase="address">
               <h3 className={styles.formTitle}>寄送地址</h3>
               <section className= {`${styles.formBody} col col-12`}>
