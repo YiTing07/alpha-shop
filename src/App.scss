@@ -1,3 +1,6 @@
+@use 'sass:math';
+$screen-break-point: 749.5px;
+
 :root {
   --white: #FFFFFF;
   --pink: #F67599;
@@ -44,6 +47,12 @@ body {
   user-select: none;
 }
 
+ul, ol, li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
 .container {
   margin: 0px 15px;
 }
@@ -57,4 +66,38 @@ body {
 }
 .cursor-point {
   cursor: pointer;
+}
+
+@mixin col-series($serial) {
+  display: flex;
+  flex-wrap: wrap;
+  $width: math.div(100%, 12) * $serial ;
+  flex: 0 0 $width;
+  align-content: flex-start;
+  max-width: $width;
+}
+.col {
+  @for $index from 1 to 13 {
+      &.col-#{$index} {
+          @include col-series($index);
+      }
+  }
+}
+@media screen and (min-width: $screen-break-point) {
+  .col {
+      @for $index from 1 to 13 {
+          &.col-lg-#{$index} {
+              @include col-series($index);
+          }
+      }
+  }
+}
+@media screen and (max-width: $screen-break-point) {
+  .col {
+      @for $index from 1 to 13 {
+          &.col-sm-#{$index} {
+              @include col-series($index);
+          }
+      }
+  }
 }
