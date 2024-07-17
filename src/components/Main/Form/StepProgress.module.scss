@@ -1,3 +1,5 @@
+@import '../../../App.scss';
+
 section.progressContainer {
   display: flex;
   align-items: center;
@@ -83,5 +85,26 @@ section.progressContainer {
 
   .undone {
     color: var(--progress-undone-color);
+  }
+}
+
+@media screen and (max-width: $screen-break-point) {
+  section.progressContainer {
+      margin-top: 24px;
+
+      .progressGroup {
+          .progressIcon {
+              width: 32px;
+              height: 32px;
+              margin-right: 0px;
+
+              .text {
+                  line-height: 32px;
+              }
+          }
+      }
+      .progressLabel {
+          display: none;
+      }
   }
 }
