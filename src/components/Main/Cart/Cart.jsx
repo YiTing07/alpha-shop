@@ -4,7 +4,7 @@ import { ReactComponent as Plus } from '../../../assets/icons/plus.svg';
 import { CartContext } from '../../../contexts/CartContext';
 import { useContext } from 'react';
 
-function CartItems ({ cart, handleClickMinus, handleClickPlus }) {
+function CartItems ({ cart, handleCountClick }) {
   return (
     <>
       {cart.map(item =>
@@ -20,12 +20,12 @@ function CartItems ({ cart, handleClickMinus, handleClickPlus }) {
             <div className={styles.productControl}>
               <Minus
                 className={styles.productAction}
-                onClick={() => handleClickMinus(item.id, item.quantity - 1)}
+                onClick={() => handleCountClick(item.id, -1)}
               />
               <span className={styles.productCount}>{item.quantity}</span>
               <Plus
                 className={styles.productAction}
-                onClick={() => handleClickPlus(item.id, item.quantity + 1)}
+                onClick={() => handleCountClick(item.id, 1)}
               />
             </div>
           </div>
@@ -41,28 +41,11 @@ function CartItems ({ cart, handleClickMinus, handleClickPlus }) {
 export default function Cart() {
   const {cart, setCart, totalPrice} = useContext(CartContext);
 
-  const handleClickPlus = ((id) => {
+  const handleCountClick = ((id, count) => {
     setCart((prevCartInfo) => {
       return prevCartInfo.map((product) => {
         if (product.id === id) {
-          const newQuantity = Math.max(product.quantity + 1, 1)
-          const newPrice = product.price / product.quantity * newQuantity
-          return {
-            ...product,
-            quantity: newQuantity,
-            price: newPrice,
-          };
-        }
-        return product
-      })
-    })
-  });
-
-  const handleClickMinus = ((id) => {
-    setCart((prevCartInfo) => {
-      return prevCartInfo.map((product) => {
-        if (product.id === id) {
-          const newQuantity = Math.max(product.quantity - 1, 1)
+          const newQuantity = Math.max(product.quantity + count, 1)
           const newPrice = product.price / product.quantity * newQuantity
           return {
             ...product,
@@ -82,8 +65,7 @@ export default function Cart() {
       <section className={`${styles.productList} col col-12`} data-total-price="0">
         <CartItems
           cart={cart}
-          handleClickMinus={handleClickMinus}
-          handleClickPlus={handleClickPlus}
+          handleCountClick={handleCountClick}
         />
       </section>
 
