@@ -12,12 +12,7 @@ import { FormContextProvider } from '../../../contexts/FormContext';
 export default function Form () {
   const [step, setStep] = useState(1);
 
-  const handleClickPrev = () => {
-    setStep(step - 1)
-  };
-  const handleClickNext = () => {
-    setStep(step + 1)
-  };
+  const handleStepClick = (num) => setStep(step + num)
 
   return (
     <FormContextProvider>
@@ -31,8 +26,7 @@ export default function Form () {
           
       <ProgressControl
         step={step}
-        handleClickPrev={handleClickPrev}
-        handleClickNext={handleClickNext}
+        handleStepClick={handleStepClick}
       />
     </section>
     </FormContextProvider>

@@ -4,10 +4,10 @@ import { ReactComponent as RightArrow } from '../../../assets/icons/right-arrow.
 import { useContext } from 'react';
 import { FormContext } from '../../../contexts/FormContext';
 
-function ControlBtn ({step, handleClickPrev, handleClickNext, handleClickOrder}) {
+function ControlBtn ({step, handleStepClick, handleClickOrder}) {
   if (step === 1) {
     return (
-      <button className={styles.next} onClick={handleClickNext}>
+      <button className={styles.next} onClick={() => handleStepClick(1)}>
             下一步
         <RightArrow />
       </button>
@@ -15,11 +15,11 @@ function ControlBtn ({step, handleClickPrev, handleClickNext, handleClickOrder})
   } else if (step === 2) {
     return (
       <>
-        <button className={styles.prev} onClick={handleClickPrev}>
+        <button className={styles.prev} onClick={() => handleStepClick(-1)}>
           <LeftArrow />
             上一步
         </button>
-        <button className={styles.next} onClick={handleClickNext}>
+        <button className={styles.next} onClick={() => handleStepClick(1)}>
             下一步
           <RightArrow />
         </button>
@@ -28,7 +28,7 @@ function ControlBtn ({step, handleClickPrev, handleClickNext, handleClickOrder})
   } else if (step === 3) {
     return (
       <>
-        <button className={styles.prev} onClick={handleClickPrev}>
+        <button className={styles.prev} onClick={() => handleStepClick(-1)}>
           <LeftArrow />
             上一步
         </button>
@@ -40,7 +40,7 @@ function ControlBtn ({step, handleClickPrev, handleClickNext, handleClickOrder})
   }
 }
 
-export default function ProgressControl ({step, handleClickPrev, handleClickNext}) {
+export default function ProgressControl ({step, handleStepClick}) {
   const {logInputValues} = useContext(FormContext)
 
   const handleClickOrder = () => {
@@ -52,8 +52,9 @@ export default function ProgressControl ({step, handleClickPrev, handleClickNext
         <section className={`${styles.buttonGroup} col col-12`}>
           <ControlBtn 
             step={step} 
-            handleClickPrev={handleClickPrev} 
-            handleClickNext={handleClickNext}
+            // handleClickPrev={handleClickPrev} 
+            // handleClickNext={handleClickNext}
+            handleStepClick={handleStepClick}
             handleClickOrder={handleClickOrder}
           />
         </section>
