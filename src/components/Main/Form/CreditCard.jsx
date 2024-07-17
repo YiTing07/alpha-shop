@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { FormContext } from '../../../contexts/FormContext';
-import styles from './Step3.module.scss';
+import styles from './CreditCard.module.scss';
 
-export default function Step3 () {
+export default function CreditCard () {
   const {cardData, setCardData} = useContext(FormContext);
 
     return (

@@ -1,6 +1,6 @@
-import styles from './Step2.module.scss';
+import styles from './Shipping.module.scss';
 
-export default function Step2 () {
+export default function Shipping () {
     return (
         <section className={`${styles.formContainer} col col-12`}>
             <form className="col col-12" data-phase="shipping">

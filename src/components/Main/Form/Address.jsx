@@ -1,4 +1,4 @@
-import styles from './Step1.module.scss';
+import styles from './Address.module.scss';
 
 const appellation = [
   { text: '先生', value: 'mr' },

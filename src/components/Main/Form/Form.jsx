@@ -1,8 +1,8 @@
 import styles from './Form.module.scss';
 import StepProgress from './StepProgress';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
+import Address from './Address';
+import Shipping from './Shipping';
+import CreditCard from './CreditCard';
 import ProgressControl from './ProgressControl';
 import { useState } from 'react';
 import { FormContextProvider } from '../../../contexts/FormContext';
@@ -20,9 +20,9 @@ export default function Form () {
       <h2 className={`${styles.registerTitle} col col-12`}>結帳</h2>
       <StepProgress step={step} />
 
-      {step === 1 && <Step1 />}
-      {step === 2 && <Step2 />}
-      {step === 3 && <Step3 />}
+      {step === 1 && <Address />}
+      {step === 2 && <Shipping />}
+      {step === 3 && <CreditCard />}
           
       <ProgressControl
         step={step}
