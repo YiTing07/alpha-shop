@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/alpha-shop/static/css/main.81556e74.css",
+    "main.js": "/alpha-shop/static/js/main.e3ce5244.js",
+    "static/js/787.7315e2ba.chunk.js": "/alpha-shop/static/js/787.7315e2ba.chunk.js",
+    "static/media/product-1.jpg": "/alpha-shop/static/media/product-1.519c527178915d9e3b5d.jpg",
+    "static/media/product-2.jpg": "/alpha-shop/static/media/product-2.a690cf23a0a476381536.jpg",
+    "static/media/logo.svg": "/alpha-shop/static/media/logo.6d2d541a75c7babc14924e8793bbf755.svg",
+    "static/media/instagram.svg": "/alpha-shop/static/media/instagram.a330d93eedb011ac3c5610489945d604.svg",
+    "static/media/whatsapp.svg": "/alpha-shop/static/media/whatsapp.9153e3faf08d4d9626edccf072bdef53.svg",
+    "static/media/cart.svg": "/alpha-shop/static/media/cart.c9c91837193c6d8839ef8fc55cefc05f.svg",
+    "static/media/plus.svg": "/alpha-shop/static/media/plus.5ffee0506b79c6403b387f1028c91ddb.svg",
+    "static/media/search.svg": "/alpha-shop/static/media/search.19b43a7c1074b282552901d670c905d2.svg",
+    "index.html": "/alpha-shop/index.html",
+    "static/media/left-arrow.svg": "/alpha-shop/static/media/left-arrow.ce8299349900811b8dd73b255faf5013.svg",
+    "static/media/right-arrow.svg": "/alpha-shop/static/media/right-arrow.46bdb48533f6fcf3e050fc1c1af6556d.svg",
+    "static/media/toggle.svg": "/alpha-shop/static/media/toggle.aed4b27596437f736956c5a0fa7d0c1c.svg",
+    "static/media/minus.svg": "/alpha-shop/static/media/minus.c53d8a67d1eb25496751f983304a6e2e.svg",
+    "static/media/facebook.svg": "/alpha-shop/static/media/facebook.e14e516349c4fe5f1ed117a1c8737833.svg",
+    "static/media/moon.svg": "/alpha-shop/static/media/moon.8719994c634f30769bc0d43fdb0fb0f6.svg",
+    "static/media/pg-complete.svg": "/alpha-shop/static/media/pg-complete.9d82650f2a23eafce186d5fdd7ad69eb.svg",
+    "main.81556e74.css.map": "/alpha-shop/static/css/main.81556e74.css.map",
+    "main.e3ce5244.js.map": "/alpha-shop/static/js/main.e3ce5244.js.map",
+    "787.7315e2ba.chunk.js.map": "/alpha-shop/static/js/787.7315e2ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81556e74.css",
+    "static/js/main.e3ce5244.js"
+  ]
+}
